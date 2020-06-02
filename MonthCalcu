@@ -1,0 +1,25 @@
+package date;
+
+import java.util.*;
+
+public class MonthCalcu {
+	private String indate;
+	private int addnum;
+	
+	public void setIndate(String indate) {
+		this.indate = indate;
+	}
+
+	public void setAddnum(int addnum) {
+		this.addnum = addnum;
+	}
+
+
+	public String monthAdd() {
+		Calendar date = Calendar.getInstance();
+		date.set(Integer.parseInt(indate.substring(0, 4)), Integer.parseInt(indate.substring(4, 6))-1, 1);
+		date.add(Calendar.MONTH, addnum);
+		return "`"+String.format("%04d", date.get(Calendar.YEAR))+"."+String.format("%02d", date.get(Calendar.MONTH)+1);
+		
+	}
+}
