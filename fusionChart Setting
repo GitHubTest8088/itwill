@@ -21,6 +21,7 @@ function chartCreate() {
          	{
          		"seriesName": "당월 Progress",
  				"renderAs": "column",
+				//"parentyaxis": "S",//  사용 y축  p:왼쪽 s:
  				"data":valueArray1
          	}, 
          	{	
@@ -89,7 +90,23 @@ function chartCreate() {
    		            "theme": "fusion"
     			},
     			"categories": categories,
-        		"dataset": dataset
+        		"dataset": dataset,
+			//목표선
+			"trendlines": [{
+			        "line": [{
+			        	"label": "tooltipText",
+			            "startvalue":planQty,
+			            "endValue":planQty,
+			            "isTrendZone": "1",
+			            "color": "#ff0000",
+			            "thickness": "3",
+			            "alpha": "60",
+			            "valueOnRight": "0",
+			            "dashed": "1",
+		                "dashLen": "4",
+		                "dashGap": "2"
+			        }]
+				}]
     		}
     	};
      
