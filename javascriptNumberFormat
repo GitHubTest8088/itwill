@@ -1,0 +1,25 @@
+	function formatData(value, pointCount){
+		var returnValue = "";
+		var commaValueArr = value.substring(0, value.indexOf(".")).split("").reverse();
+		var commaReslutArr = [];
+		var pointValue = value.substring(value.indexOf("."), value.indexOf(".")+pointCount+1);
+		commaValueArr.forEach(function(value, index){
+			if(index != commaValueArr.length-1 && ((index+1) % 3) === 0){
+				commaReslutArr.push(','+value);
+			}else{
+				commaReslutArr.push(value);
+			}
+		});
+		commaReslutArr.reverse();
+		commaReslutArr.forEach(function(value, index){
+			returnValue += value;
+		});
+		
+		for(var i=0; i<pointCount; i++){
+			if((pointValue.length-1)===pointCount){
+				break;
+			}
+			pointValue += '0';
+		}
+		return returnValue+pointValue;
+	}
