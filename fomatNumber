@@ -1,0 +1,14 @@
+	function formatData(value, pointCount){
+		value *= 1;
+		if(value===null){
+			return "";
+		}
+		//toFixed => number type으로 받아서 string type으로 반환
+		value = value.toFixed(pointCount);
+		value *= 1;
+		//toLocaleString => number type에 사용하면 3자리 컴마가 적용됨
+		value = value.toLocaleString('ko-Kr');
+		//jQuery에 number plug-in을 적용해서 사용해도 된다..
+		return value;
+	}
+	
