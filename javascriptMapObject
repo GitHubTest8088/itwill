@@ -1,0 +1,33 @@
+var makeMap = function () {
+	  var map = {};
+	  map.getKey = function(id) {
+	    return id;
+	  };
+	  map.put = function(id, value) {
+	    var key = map.getKey(id);
+	    map[key] = value;
+	  };
+	  map.contains = function(id) {
+	    var key = map.getKey(id);
+	    if(map[key]) {
+	      return true;
+	    } else {
+	      return false;
+	    }
+	  };
+	  map.get = function(id) {
+	    var key = map.getKey(id);
+	    if(map[key]) {
+	      return map[key];
+	    }
+	    return null;
+	  };
+	  map.remove = function(id) {
+	    var key = map.getKey(id);
+	    if(map.contains(id)){
+	      map[key] = undefined;
+	    }
+	  };
+	 
+	  return map;
+}
