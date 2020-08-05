@@ -1,6 +1,6 @@
 1. 선택된 Radio 버튼의 값(value) 가져오기
 
-    var st = $(":input:radio[name=search_type]:checked").val();
+    var st = $("input:radio[name=search_type]:checked").val();
 
 2. Radio 버튼 값 설정(선택)하기
 
