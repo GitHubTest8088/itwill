@@ -1,0 +1,1 @@
+vdate = vdate.substr(0,4) + '-' + vdate.substr(4,2) + '-' + vdate.substr(6,2);
