@@ -1,2 +1,5 @@
 first-child는 여러개가 선택될 수 있고
 first는 한개만 선택된다
+
+// table null값 설정 또는 특정 값들을 다른 값으로 변경 할 때 사용
+$('table > tbody > tr > td:empty').text('-');
