@@ -1,0 +1,32 @@
+<div class='left-heder'>
+  <table>
+  </table>
+</div>
+<div class='right-heder'>
+  <table>
+  </table>
+</div>
+<div class='left-body'>
+  <table>
+  </table>
+</div>
+<div class='right-body' style='overflow-x:scroll; overflow-y:scroll;'>
+  <table>
+  </table>
+</div>
+
+*left : fixed column
+*right : scroll body
+*스크롤은 right-body "div"에만 주고 scroll이벤트 핸들러를 통해
+ left-body와 right-header를 Control 한다.
+
+*jQuery를 활용한 이벤트 처리
+  $(".right-body").scroll(function() {
+    $(".right-header").scrollLeft($(this).scrollLeft());
+    $(".left-body").scrollTop($(this).scrollTop());
+  });
+
+  $(window).resize(function() {
+    $('.left-body .right-body').css('height', $(window).height() - 350 );   
+  });
+  $(window).trigger("resize");
