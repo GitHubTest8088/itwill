@@ -30,3 +30,5 @@
     $('.left-body .right-body').css('height', $(window).height() - 350 );   
   });
   $(window).trigger("resize");
+
+* rendering 속도 문제에 부딛치게 되면 paging처리나 datatables의 지연로딩 기능을 고려해 본다.
