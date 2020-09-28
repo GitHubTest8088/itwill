@@ -77,8 +77,8 @@ function chartCreate() {
    		            "yAxisValueFontSize": "10", //y값 폰트사이즈
    		         	"labelBorderPadding": "0",
 				//auto:기본값, rotate:항상돌림(각도조절 ["slantLabel": "1"]), wrap:겹치지 않게 중간라벨을 없앰, stagger:지그재그로 표현
-   		       //Dinamic Label Display 36건(3년)이하 auto 이상이면 stagger로 처리 if를 사용해서 처리 가능
-   		        	"labelDisplay": "auto", 
+   		       		//Dinamic Label Display 36건(3년)이하 auto 이상이면 stagger로 처리
+	   		        "labelDisplay": (labelArray.length <= 36) ? "auto" : "stagger",    		    	    
    		       		//세로배경줄 
    		        	"numVDivLines": labelArray.length-1,   //라인수가 지정되어야 한다.. 데이터건수 - 1
    		        	"divLineColor": "#6699cc",
