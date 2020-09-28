@@ -7,6 +7,13 @@ function chartCreate() {
 		var minYAxisValueSeries1 = 0;    
 		
 	//Array에 데이터를 담는다.
+	//ajax로 데이터를 가져오는 경우 $.each를 쓸 수 있음.
+        //동기식 방식에서는 jstl을 사용해야 함
+	<c:forEach var="trend" items="${monthList }" varStatus="weekIndex">	
+	    	labelArray.push({"label" : "'${fn:substring(trend.yyyymm,2,4) }.${fn:substring(trend.yyyymm,4,6) }"});
+        	valueArray1.push({"value" : "${trend.progress}"});
+        	valueArray2.push({"value" : "${trend.rework_rate}"});
+        </c:forEach>
     
     //STEP 2 - Chart Data
         // Define the categories representing the labels on the X-axis
@@ -63,11 +70,15 @@ function chartCreate() {
    		            "toolTipBgAlpha": "80",
    		            "toolTipBorderRadius": "2",
    		            "toolTipPadding": "5",
+			    "tooltext": "$label",
+   		         	"plotToolText": "$seriesName : <b>$dataValue</b>",   //마우스를 over했을 때 나오는 툴팁
    		         	"adjustDiv": "0",
    		         	"labelFontSize": "10",  //라벨폰트사이즈
    		            "yAxisValueFontSize": "10", //y값 폰트사이즈
    		         	"labelBorderPadding": "0",
-   		        	"labelDisplay": "auto", //auto:기본값, rotate:항상돌림(각도조절 ["slantLabel": "1"]), wrap:겹치지 않게 중간라벨을 없앰
+				//auto:기본값, rotate:항상돌림(각도조절 ["slantLabel": "1"]), wrap:겹치지 않게 중간라벨을 없앰, stagger:지그재그로 표현
+   		       //Dinamic Label Display 36건(3년)이하 auto 이상이면 stagger로 처리 if를 사용해서 처리 가능
+   		        	"labelDisplay": "auto", 
    		       		//세로배경줄 
    		        	"numVDivLines": labelArray.length-1,   //라인수가 지정되어야 한다.. 데이터건수 - 1
    		        	"divLineColor": "#6699cc",
