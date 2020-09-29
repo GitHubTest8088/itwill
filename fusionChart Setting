@@ -47,49 +47,49 @@ function chartCreate() {
     		dataFormat: 'json', // Data type
     		dataSource: {
     			"chart": {
-  					//차트마진설정
+  				//차트마진설정
     				"chartLeftMargin": "0",
-    			    "chartTopMargin": "0",
-    			    "chartRightMargin": "10",
-    			    "chartBottomMargin": "0",
-    			    "canvasTopPadding": "5",  //그래프 위가 짤려서 패딩 줌
-    			    "canvasBottomPadding": "5", //그래프 아래가 짤려서 패딩 줌
+    			    	"chartTopMargin": "0",
+    			    	"chartRightMargin": "10",
+    			    	"chartBottomMargin": "0",
+    			    	"canvasTopPadding": "5",  //그래프 위가 짤려서 패딩 줌
+    			    	"canvasBottomPadding": "5", //그래프 아래가 짤려서 패딩 줌
     				"caption": "",
-   		            "subCaption": "",
-   		            //레전드 위치 설정
+   		            	"subCaption": "",
+   		            	//레전드 위치 설정
    		         	"legendPosition": "top-right",  
-   		            "xAxisname": "",
-   		            "yAxisName": "",
-   		            //앵커 (echart기준 symbol)
+   		            	"xAxisname": "",
+   		            	"yAxisName": "",
+   		            	//앵커 (echart기준 symbol)
    		         	"drawAnchors": "1",  //유무
 	   		        "anchorRadius": "3", //크기
 	   		        //툴팁
-   		            "toolTipColor": "#ffffff",
-   		            "toolTipBorderThickness": "0",
-   		            "toolTipBgColor": "#000000",
-   		            "toolTipBgAlpha": "80",
-   		            "toolTipBorderRadius": "2",
-   		            "toolTipPadding": "5",
-			    "tooltext": "$label",
+   		            	"toolTipColor": "#ffffff",
+   		            	"toolTipBorderThickness": "0",
+   		            	"toolTipBgColor": "#000000",
+   		           	"toolTipBgAlpha": "80",
+   		                "toolTipBorderRadius": "2",
+   		                "toolTipPadding": "5",
+			        "tooltext": "$label",
    		         	"plotToolText": "$seriesName : <b>$dataValue</b>",   //마우스를 over했을 때 나오는 툴팁
    		         	"adjustDiv": "0",
    		         	"labelFontSize": "10",  //라벨폰트사이즈
-   		            "yAxisValueFontSize": "10", //y값 폰트사이즈
+   		                "yAxisValueFontSize": "10", //y값 폰트사이즈
    		         	"labelBorderPadding": "0",
-				//auto:기본값, rotate:항상돌림(각도조절 ["slantLabel": "1"]), wrap:겹치지 않게 중간라벨을 없앰, stagger:지그재그로 표현
-   		       		//Dinamic Label Display 36건(3년)이하 auto 이상이면 stagger로 처리
-	   		        "labelDisplay": (labelArray.length <= 36) ? "auto" : "stagger",    		    	    
+				//auto:기본값, rotate:항상돌림(각도조절 ["slantLabel": "1"]), wrap:겹치지 않게 중간라벨을 없앰, stagger: 지그재그("staggerLines": "3")지그재그단계
+	       	   		//Dinamic Label Display 36건(3년)이하 auto 이상이면 stagger로 처리
+	       		   	"labelDisplay": (labelArray.length <= 36) ? "auto" : "stagger",    	  	    
    		       		//세로배경줄 
    		        	"numVDivLines": labelArray.length-1,   //라인수가 지정되어야 한다.. 데이터건수 - 1
    		        	"divLineColor": "#6699cc",
 	   		        "divLineAlpha": "60",
 	   		        "divLineDashed": "1",
 	   		        "divLineDashLen": "5",
-	   		   		//최대값과 최소 값 설정
-	   		   		"yAxisMaxValue": maxYAxisValueSeries1,
+	   		   	//최대값과 최소 값 설정
+	   		   	"yAxisMaxValue": maxYAxisValueSeries1,
         			"yAxisMinValue": minYAxisValueSeries1,
-	   		   		//가로배경줄 
-	   		   		//"numDivLines": "4",   //가로배경줄을 만드는 규칙이나 함수가 필요 할 듯.. 
+	   		   	//가로배경줄 
+	   		   	//"numDivLines": "4",   //가로배경줄을 만드는 규칙이나 함수가 필요 할 듯.. 
 		   	        "vDivLineColor": "#99ccff",
 		   	        "vDivLineThickness": "1",
 		   	        "vDivLineAlpha": "70",
@@ -105,7 +105,7 @@ function chartCreate() {
 			//목표선
 			"trendlines": [{
 			        "line": [{
-			        	"label": "tooltipText",
+			            "label": "tooltipText",
 			            "startvalue":planQty,
 			            "endValue":planQty,
 			            "isTrendZone": "1",
