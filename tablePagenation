@@ -1,0 +1,34 @@
+pagenation - 한방쿼리 후 show/hide를 적용하여 구현한 pagenation
+                 파라메타 값이 많이 필요없고 페이징 할 때마다 서버요청이 없어서 빠르다.
+
+0. 버튼의 구성
+	   previous  1 ... 5 6 7 ... 20 next
+button index     0     1 2  3 4 5 6  7   8
+
+0-1 . 검색조건
+   ROW_NUMBER() OVER(ORDER BY 정렬컬럼1, 정렬컬럼2...) AS RN
+
+1. 변수선언
+	총데이터건수, 현재 페이지, 마지막 페이지
+
+2. 변수설정
+             현재페이지 = 선택된 값;
+             마지막페이지 = Math.ceil(총데이터건수 / 한페이지에 보여지는 값)
+		* Math.ceil() 함수는 주어진 숫자보다 크거나 같은 숫자 중 가장 작은 숫자를 integer 로 반환합니다.
+
+3. 선택된 값만 보여지기
+	테이블의 row를 돌여 선택된 페이지와 일치하는 값이면 보여주고  일치하지 않으면 숨긴다.
+                       $("[name='dataTr']").each(function() {
+			if(parseInt($(this).attr("cnt")) > (parseInt($("#showCnt").selectpicker("val"))*page - parseInt($("#showCnt").selectpicker("val")))
+				&& parseInt($(this).attr("cnt")) <= parseInt($("#showCnt").selectpicker("val"))*page) {
+				$(this).show();
+			} else {
+				$(this).hide();
+			}
+		});
+   
+4. pagenation처리
+     	A) 마지막페이지 표시 $(".pagination > .last").find("a").text(lastPage);
+ 	B) 현재페이지가 1인 경우 previous버튼을 숨김
+	C) 현재 페이지에 따라 버튼을 보여주는 유형을 작업
+
