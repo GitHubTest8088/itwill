@@ -1,0 +1,8 @@
+요소에 그림자 효과를 준다. 
+
+style="box-shadow: 1px 1px 13px 2px rgba(0,0,0,0.3);box-sizing: border-box;"
+
+/*박스의 크기*/
+https://developer.mozilla.org/ko/docs/Web/CSS/box-sizing
+/*박스의 그림자*/
+https://developer.mozilla.org/ko/docs/Web/CSS/box-shadow
