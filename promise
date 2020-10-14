@@ -5,5 +5,16 @@ https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-
 2. Promise
 https://joshua1988.github.io/web-development/javascript/promise-for-beginners/
 
+new Promise({
+  resolve(1);
+}).then(function(result){
+  console.log(result);  //1
+}).then(function(result){
+  result += 10;
+  console.log(result);  //11
+}).catch(function(err){
+  //error code
+});
+
 3. async, await
 https://joshua1988.github.io/web-development/javascript/js-async-await/
