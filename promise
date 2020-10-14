@@ -2,6 +2,14 @@
 1. 자바스크립트 비동기 처리와 콜백함수
 https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/
 
+비동기방식 : 현재코드의 응답이 오기전에 다음코드를 실행하는 것.
+            웹프로그램을 동기식으로 처리하면 시간이 오래 걸린다.
+
+비동기방식으로 인해 발생되는 문제를 콜백함수로 해결한다.
+
+콜백함수의 남발로 코드가 복잡해진다 이를 해결하기위해 나온것이
+Promise와 Async이다.
+
 2. Promise
 https://joshua1988.github.io/web-development/javascript/promise-for-beginners/
 대기하고 있다가 응답이 오면 결과를 사용
@@ -27,3 +35,8 @@ https://joshua1988.github.io/web-development/javascript/js-async-await/
 
 async : 순차적으로 처리 할거야.
 await : 여기서 응답이 올 때까지 기다려.
+
+async function seqFunc() {
+    var result = await (비동기 처리 로직); 
+    //next code
+}
