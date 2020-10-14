@@ -24,3 +24,6 @@ new Promise({
 
 3. async, await
 https://joshua1988.github.io/web-development/javascript/js-async-await/
+
+async : 순차적으로 처리 할거야.
+await : 여기서 응답이 올 때까지 기다려.
