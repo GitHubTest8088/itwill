@@ -4,6 +4,12 @@ https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-
 
 2. Promise
 https://joshua1988.github.io/web-development/javascript/promise-for-beginners/
+대기하고 있다가 응답이 오면 결과를 사용
+               에러가 나면 에러처리
+
+대기 : Pending   - new Promise
+이행 : Fulfilled - then 
+실패 : Rejected  - catch
 
 new Promise({
   resolve(1);
