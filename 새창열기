@@ -1,0 +1,27 @@
+2. 사용예
+
+
+
+- 가장 일반적인 사용예 입니다. popup.html 을 지정된 크기의 창에 팝업 합니다.
+
+
+
+var win = window.open("/popup.html", "PopupWin", "width=500,height=600");
+
+
+
+- 빈 창을 열고 내용을 동적으로 적습니다.
+
+var win = window.open("", "PopupWin", "width=500,height=600");
+
+win.document.write("<p>새창에 표시될 내용 입니다.</p>");
+
+
+
+- 창 컨트롤을 모두 활성화 합니다.
+
+var win = window.open("/popup.html", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+
+
+
+출처: https://offbyone.tistory.com/312 [쉬고 싶은 개발자]
