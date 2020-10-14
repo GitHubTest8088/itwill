@@ -7,9 +7,9 @@ https://joshua1988.github.io/web-development/javascript/promise-for-beginners/
 대기하고 있다가 응답이 오면 결과를 사용
                에러가 나면 에러처리
 
-대기 : Pending   - new Promise
-이행 : Fulfilled - then 
-실패 : Rejected  - catch
+대기(Pending) :  new Promise 를 선언하면 pending상태가 된다.
+이행(Fulfilled) : resolve() 를 통해 상태변경 - .then을 통해 함수 구현 
+실패(Rejected) : reject() 를 통해 상태변경  - .catch를 통해 함수 구현
 
 new Promise({
   resolve(1);
