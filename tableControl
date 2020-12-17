@@ -32,3 +32,18 @@
   $(window).trigger("resize");
 
 * rendering 속도 문제에 부딛치게 되면 paging처리나 datatables의 지연로딩 기능을 고려해 본다.
+
+**테이블 내에서 스크롤 이동 **
+https://qastack.kr/programming/2905867/how-to-scroll-to-specific-item-using-jquery
+
+var $container = $('div'),
+    $scrollTo = $('#row_8');
+
+$container.scrollTop(
+    $scrollTo.offset().top - $container.offset().top + $container.scrollTop()
+);
+
+// Or you can animate the scrolling:
+$container.animate({
+    scrollTop: $scrollTo.offset().top - $container.offset().top + $container.scrollTop()
+});​
