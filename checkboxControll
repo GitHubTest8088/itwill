@@ -63,4 +63,19 @@ Ex) $('input[name="checkbox_name"]').is(":checked")
 
 8. checkbox checked 여부 간단 확인: $("#checkbox_id"]').is(":checked"); //단일건
 
+9. 한개만 쳌크
+		$("input[name=rightCheckbox]").click(function(){
+			var thisId = $(this).attr('id');
+			var isChk = $(this).is(':checked');
+			 $('input:checkbox[name="rightCheckbox"]').each(function() {
+			      this.checked = false; //checked 처리
+			      if ( $(this).attr('id') == thisId ) {
+			    	  if(isChk){
+					      this.checked = true; //checked 처리			    		  
+			    	  }
+			      }
+			 });
+
+		});
+
 
