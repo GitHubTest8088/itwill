@@ -1,0 +1,12 @@
+https://zero-gravity.tistory.com/311
+
+
+function genRowspan(className){
+    $("." + className).each(function() {
+        var rows = $("." + className + ":contains('" + $(this).text() + "')");
+        if (rows.length > 1) {
+            rows.eq(0).attr("rowspan", rows.length);
+            rows.not(":eq(0)").remove();
+        }
+    });
+}
